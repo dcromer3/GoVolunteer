@@ -1,0 +1,86 @@
+html {
+    height: 100%;
+}
+
+body {
+	background: #0d2747; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#0d2747, rgb(50, 152, 50)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0d2747, rgb(50, 152, 50)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0d2747, rgb(50, 152, 50)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0d2747, rgb(50, 152, 50)); /* Standard syntax */
+	padding: 3%;
+	color: #fff;
+	height: 100%;
+}
+
+h5 {
+	margin-top: 7%;
+}
+
+.your-event-tile {
+	background: rgb(230, 247, 255);
+	padding: 3%;
+	color: #0d2747;
+	margin: 3%;
+
+}
+
+.your-event-title:hover {
+	background: #
+}
+
+.event-tile {
+	background: rgb(233, 255, 230);
+	padding: 3%;
+	color: #0d4727;
+	margin: 3%;
+}
+
+.your-event {
+	background: #0d2747;
+	color: #fff;
+	border: none;
+}
+
+button.your-event:hover {
+	background: #2877d7;
+	color: #fff;
+	border: none;
+}
+
+.event {
+	background: #267326;
+	color: #fff;
+	border: none;
+}
+
+button.event:hover {
+	background: #53c653;
+	color: #fff;
+	border: none;
+}
+
+a {
+	color: #fff;
+	text-align: right;
+}
+
+a:hover {
+	color: rgb(233, 255, 230);
+}
+
+.margin-10 {
+	margin: 10%;
+}
+
+.h-center {
+	margin-left: 5%;
+}
+
+.v-center {
+	margin-top: 10%;
+}
+
+.right {
+	text-align: right;
+}
