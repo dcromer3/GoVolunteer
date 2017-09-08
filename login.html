@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="govolstyle.css">
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
 </head>
 
 <body>
@@ -62,8 +63,8 @@
 	<div class="row">
 	    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-			<button class="your-event margin-10">Register</button>
-				<button class="your-event">Login</button>
+			<button id = "Register" class="your-event margin-10">Register</button>
+				<button id = "Login" class="your-event">Login</button>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
 	</div>
@@ -71,6 +72,38 @@
 				
 <!-- TODO insert fixed position images here -->
 
+<script type="text/javascript">
+
+        var appId = '8510-5606-2257';
+
+        var roleArn = 'dakota';
+
+        var bucketName = 'govolunteer';
+
+        AWS.config.region = 'US East (N. Virginia)';
+
+        var bucket = new AWS.S3({
+
+            params: {
+
+                Bucket: bucketName
+
+            }
+
+        });
+
+        var button1 = document.getElementById('Register');
+        var button2 = document.getElementById('Login');
+
+         button1.addEventListener('click', function () {
+         	//Implement the NoSQL Code
+         	console.log(1);
+         };
+
+         button2.addEventListener('click', function () {
+         	//Implement the NoSQL Code
+         	console.log(2);
+         };
 
 </body>
 
