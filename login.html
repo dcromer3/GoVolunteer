@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="govolstyle.css">
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -74,31 +75,27 @@
 
 		<script>
 			function sendToDatabase(){
-		       /** var appId = '8510-5606-2257';
+				
+				var userObject = {
+					"userid" : [], 
+					"email": [],
+					"name" : [],
+					"password" : [],
+					"phone" : [],
+				};
 
-		        var roleArn = 'dakota';
+				userObject = $.getJSON("https://lce4l1fcek.execute-api.us-east-1.amazonaws.com/user/userid", null, console.log("Success!"));
+				
+		        //var button1 = document.getElementById('Register');
+		        //var button2 = document.getElementById('Login');
 
-		        var bucketName = 'govolunteer';
+		        /**button1.addEventListener(onclick, function()){
 
-		        AWS.config.region = 'US East (N. Virginia)';
-
-		        var bucket = new AWS.S3({
-
-		            params: {
-
-		                Bucket: bucketName
-
-		            }
-
-		        });*/
-
-		        var button1 = document.getElementById('Register');
-		        var button2 = document.getElementById('Login');
-
-		         console.log(2);
-
-		        
-			}
+		        	jquery(
+		        	post(userid, name, email, password, phone)
+		        	)
+		        }*/		        
+			};
 		</script>
 </body>
 
