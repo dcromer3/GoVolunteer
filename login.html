@@ -63,8 +63,8 @@
 	<div class="row">
 	    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-			<button id = "Register" class="your-event margin-10">Register</button>
-				<button id = "Login" class="your-event">Login</button>
+			<button onclick="sendToDatabase()" id = "Register" class="your-event margin-10">Register</button>
+				<button onclick="sendToDatabase()" id = "Login" class="your-event">Login</button>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
 	</div>
@@ -72,39 +72,34 @@
 				
 <!-- TODO insert fixed position images here -->
 
-<script type="text/javascript">
+		<script>
+			function sendToDatabase(){
+		       /** var appId = '8510-5606-2257';
 
-        var appId = '8510-5606-2257';
+		        var roleArn = 'dakota';
 
-        var roleArn = 'dakota';
+		        var bucketName = 'govolunteer';
 
-        var bucketName = 'govolunteer';
+		        AWS.config.region = 'US East (N. Virginia)';
 
-        AWS.config.region = 'US East (N. Virginia)';
+		        var bucket = new AWS.S3({
 
-        var bucket = new AWS.S3({
+		            params: {
 
-            params: {
+		                Bucket: bucketName
 
-                Bucket: bucketName
+		            }
 
-            }
+		        });*/
 
-        });
+		        var button1 = document.getElementById('Register');
+		        var button2 = document.getElementById('Login');
 
-        var button1 = document.getElementById('Register');
-        var button2 = document.getElementById('Login');
+		         console.log(2);
 
-         button1.addEventListener('click', function () {
-         	//Implement the NoSQL Code
-         	console.log(1);
-         };
-
-         button2.addEventListener('click', function () {
-         	//Implement the NoSQL Code
-         	console.log(2);
-         };
-
+		        
+			}
+		</script>
 </body>
 
 </html> 
