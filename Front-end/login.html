@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -8,7 +8,9 @@
 	<meta name="author" content="Rania Glass">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link rel="stylesheet" href="govolstyle.css">
+	<link rel="stylesheet" href="./css/govolstyle.css">
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -62,8 +64,8 @@
 	<div class="row">
 	    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-			<button class="your-event margin-10">Register</button>
-				<button class="your-event">Login</button>
+			<button onclick="sendToDatabase()" id = "Register" class="your-event margin-10">Register</button>
+				<button onclick="sendToDatabase()" id = "Login" class="your-event">Login</button>
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
 	</div>
@@ -71,7 +73,30 @@
 				
 <!-- TODO insert fixed position images here -->
 
+		<script>
+			function sendToDatabase(){
+				
+				var userObject = {
+					"userid" : [], 
+					"email": [],
+					"name" : [],
+					"password" : [],
+					"phone" : [],
+				};
 
+				userObject = $.getJSON("https://lce4l1fcek.execute-api.us-east-1.amazonaws.com/user/userid", null, console.log("Success!"));
+				
+		        //var button1 = document.getElementById('Register');
+		        //var button2 = document.getElementById('Login');
+
+		        /**button1.addEventListener(onclick, function()){
+
+		        	jquery(
+		        	post(userid, name, email, password, phone)
+		        	)
+		        }*/		        
+			};
+		</script>
 </body>
 
 </html> 
