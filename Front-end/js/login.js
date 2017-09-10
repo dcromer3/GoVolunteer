@@ -12,3 +12,7 @@ function login(){
         // Disabling fields after 3 attempts.
     }
 }
+
+function createId() {
+  window.location.replace("register.html");
+}
