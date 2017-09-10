@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/govolstyle.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+	<script src="./js/addNewEvent.js"></script>
 </head>
 
 <body>
@@ -50,10 +50,15 @@
 	</div>
 	<div class="row" id = "btns">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button class="your-event">My Events</button>
+			<button onclick="myEvents()" class="your-event" id ="myEvents">My Events</button>
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button class="your-event">Create Event</button>
+			<button class="your-event" id="createEvents">Create Event</button>
+		</div>
+	</div>
+	<div class="row" id = "btns">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<button onclick="logout()" class="your-event" id ="logout">logOut</button>
 		</div>
 	</div>
 
