@@ -2,6 +2,7 @@ var organizationId;
 var arr = [];
 var userArr = [];
 var username;
+var moreId;
 
 $( document ).ready(function() {
   username = sessionStorage.getItem("username");
@@ -11,24 +12,16 @@ $( document ).ready(function() {
       iterURL();
     }
   });
-  $('#more0').on('click', function() {
-    sessionStorage.setItem("id",0);
-    window.location.replace("eventProfile.html");
-  });
-  $('#more1').on('click', function() {
-    sessionStorage.setItem("id",1);
-    window.location.replace("eventProfile.html");
-  });
-  $('#more2').on('click', function() {
-    sessionStorage.setItem("id",2);
-    window.location.replace("eventProfile.html");
-  });
-  $('#more3').on('click', function() {
-    sessionStorage.setItem("id",3);
-    window.location.replace("eventProfile.html");
-  });
-
 });
+
+function more(hid) {
+    console.log(hid);
+  var id = document.getElementById("desc0").value;
+
+  console.log(id);
+  //sessionStorage.setItem("moreId",id);
+  //window.location.replace("eventProfile.html");
+}
 
 function ajax1() {
   return $.ajax({
@@ -79,9 +72,11 @@ function iterURL() {
               organizationId = getData.Items[0].organization.S;
               var eventname = "eventname" + temp;
               var desc = "desc" + temp;
+              var hid = "hid" + temp;
               console.log('organizationID : ' + organizationId);
               document.getElementById(eventname).innerHTML = getData.Items[0].eventname.S;
               document.getElementById(desc).innerHTML = getData.Items[0].description.S;
+              document.getElementById(hid).innerHTML = organizationId;
               temp += 1;
             } else {
               //break;
@@ -96,10 +91,4 @@ function iterURL() {
 }
 function back() {
   window.location.replace("addNewEvent.html");
-}
-
-
-function getOrganizationId() {
-  console.log(organizationId);
-  return organizationId;
 }

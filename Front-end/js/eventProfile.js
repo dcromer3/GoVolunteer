@@ -1,7 +1,8 @@
 
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
-  var id = sessionStorage.getItem("id");
+  var id = sessionStorage.getItem("moreId");
+  console.log(id);
   $.ajax({
           url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
           +encodeURIComponent(id),
@@ -17,7 +18,7 @@ $(window).bind("load", function() {
           }
   });
   $('#back').on('click', function() {
-    sessionStorage.removeItem("id");
+    sessionStorage.removeItem("moreId");
     window.location.replace("govolunteer.html");
   });
 });
