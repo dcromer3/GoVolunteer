@@ -1,16 +1,11 @@
 var organizationId;
+var arr = [];
 
 
 $( document ).ready(function() {
-  $.getJSON('https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
-    +encodeURIComponent(0),
-    function(data,err) {
-      if (data !== null) {
-        console.log('DB access : '+ err);
-        iterURL();
-      } else {
-        console.log('DB is empty');
-      }
+  
+  $.when(ajax1()).done(function() {
+    iterURL();
   });
   $('#more1').on('click', function() {
     sessionStorage.setItem("id",1);
@@ -31,13 +26,29 @@ $( document ).ready(function() {
 
 });
 
-function iterURL() {
+function ajax1() {
+  return $.ajax({
+      url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationsinfo/',
+      method: 'GET',
+      dataType: 'json',
+      success: function(getData) {
+        for (var i = 0; i < getData.Items.length; i++) {
+          console.log(getData.Items[i].organization.S);
+          arr[i] = (getData.Items[i].organization.S);
+          //console.log(arr);
+        }
+      },
+      error: function() {
+        console.log('error loading data');
+      }
+  });
+}
 
-  //while (true) {
-  for (var i = 1; i < 5; i++) {
+function iterURL() {
+  for (var i = 0; i <= arr.length; i++) {
     $.ajax({
           url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
-          +encodeURIComponent(i),
+          +encodeURIComponent(arr[i]),
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
