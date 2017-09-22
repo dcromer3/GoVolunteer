@@ -15,12 +15,12 @@ $( document ).ready(function() {
 });
 
 function more(hid) {
-    console.log(hid);
-  var id = document.getElementById("desc0").value;
-
-  console.log(id);
-  //sessionStorage.setItem("moreId",id);
-  //window.location.replace("eventProfile.html");
+  //var moreId = document.getElementById(hid);
+  var id = document.getElementsByClassName(hid.id);
+  id = id[0].innerHTML;
+  //console.log(id);
+  sessionStorage.setItem("eventId",id);
+  window.location.replace("eventProfile.html");
 }
 
 function ajax1() {

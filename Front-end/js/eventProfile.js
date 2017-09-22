@@ -1,7 +1,7 @@
 
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
-  var id = sessionStorage.getItem("moreId");
+  var id = sessionStorage.getItem("eventId");
   console.log(id);
   $.ajax({
           url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
