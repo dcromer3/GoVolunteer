@@ -16,23 +16,32 @@ function createEvents() {
 	console.log('user: '+ username);
 
 	$.when(ajax1()).done(function() {
-		var num = count.toString();
-		console.log(num);
-		var events = {
-						  "address": "2445 dooley drive",
-						  "description": desc,
-						  "eventname": eventname,
-						  "organization": num,
-						  "skills": skills,
-						  "username": username
-						}
-	    $.ajax({
-	        type: "POST",
-	        data :JSON.stringify(events),
-	        url: "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization",
-	        contentType: "application/json"
-	    });
-	    alert('created');
+		console.log(eventname);
+		 if (eventname == "") {
+		 	alert("missing event name");
+		} else if (desc == "") {
+			alert("missing event description");
+		} else if (skills == "") {
+			alert("missing preferred skills");
+		} else {
+			var num = count.toString();
+			console.log(num);
+			var events = {
+							  "address": "2445 dooley drive",
+							  "description": desc,
+							  "eventname": eventname,
+							  "organization": num,
+							  "skills": skills,
+							  "username": username
+							}
+		    $.ajax({
+		        type: "POST",
+		        data :JSON.stringify(events),
+		        url: "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization",
+		        contentType: "application/json"
+		    });
+		    alert('created');
+		}
   	});
 	
 }
