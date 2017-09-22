@@ -1,15 +1,14 @@
-var count = 0;
+//var count = 0;
 function createId() {
-	$.when(ajax1()).done(function() {
-		ajax2();
+	$.when(ajax2()).done(function() {
 		alert('created');
 		back();
 	});
 	
 }
 function ajax2() {
-	console.log(count);
-	var userId = count;
+	//console.log(count);
+	var userId = document.getElementById("userid").value;
 	var username = document.getElementById("username").value;
 	var password = document.getElementById("password").value;
 	var email = document.getElementById("email").value;
