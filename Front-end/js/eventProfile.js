@@ -21,4 +21,9 @@ $(window).bind("load", function() {
     sessionStorage.removeItem("moreId");
     window.location.replace("govolunteer.html");
   });
+
+  $('#edit').on('click', function() {
+    sessionStorage.setItem("editId",id);
+    window.location.replace("editEvent.html");
+  });
 });
