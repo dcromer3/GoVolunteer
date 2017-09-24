@@ -20,7 +20,7 @@
 		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">	
 		</div>
 		<div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
-			<a href="#" class="h-center"><img src ="Images/logo.png" href="logo.png" alt="GoVolunteer logo"></a>
+			<a href="login.html" class="h-center"><img src ="Images/logo.png" href="logo.png" alt="GoVolunteer logo"></a>
 		</div>
 		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">	
 		</div>
@@ -73,31 +73,6 @@
 </div>
 				
 <!-- TODO insert fixed position images here -->
-
-		<script>
-			function sendToDatabase(){
-				
-				var userObject = {
-					"userid" : [], 
-					"email": [],
-					"name" : [],
-					"password" : [],
-					"phone" : [],
-				};
-
-				userObject = $.getJSON("https://lce4l1fcek.execute-api.us-east-1.amazonaws.com/user/userid", null, console.log("Success!"));
-				
-		        //var button1 = document.getElementById('Register');
-		        //var button2 = document.getElementById('Login');
-
-		        /**button1.addEventListener(onclick, function()){
-
-		        	jquery(
-		        	post(userid, name, email, password, phone)
-		        	)
-		        }*/		        
-			};
-		</script>
 </body>
 
 </html> 
