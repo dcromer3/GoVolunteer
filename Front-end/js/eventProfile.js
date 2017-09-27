@@ -26,4 +26,14 @@ $(window).bind("load", function() {
     sessionStorage.setItem("editId",id);
     window.location.replace("editEvent.html");
   });
+  $('#delete').on('click', function() {
+    sessionStorage.getItem("eventId");
+    $.ajax({
+            type: "DELETE",
+            data :JSON.stringify("eventID"),
+            url: "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization",
+            contentType: "application/json"
+        });
+    window.location.replace("govolunteer.html");
+  });
 });
