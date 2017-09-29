@@ -41,6 +41,7 @@ function createEvents() {
 		        contentType: "application/json"
 		    });
 		    alert('created');
+		    window.location.replace("govolunteer.html");
 		}
   	});
 	

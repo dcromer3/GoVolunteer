@@ -47,6 +47,7 @@ function ajax2() {
       dataType: 'json',
       success: function(getData) {
         for (var i = 0; i < getData.Items.length; i++) {
+          //console.log(getData.Items.length);
           //userArr[i] = (getData.Items[i].username.S);
           if (username == getData.Items[i].username.S) {
             userArr.push(getData.Items[i].organization.S);
