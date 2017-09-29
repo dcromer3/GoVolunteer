@@ -27,13 +27,19 @@ $(window).bind("load", function() {
     window.location.replace("editEvent.html");
   });
   $('#delete').on('click', function() {
-    sessionStorage.getItem("eventId");
+    var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
     $.ajax({
-            type: "DELETE",
-            data :JSON.stringify("eventID"),
-            url: "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization",
-            contentType: "application/json"
+            method: "GET",
+            dataType: 'json',
+            url: deleteURL,
+            contentType: "application/json",
+            success: function() {
+            alert('Deleted');
+            window.location.replace("govolunteer.html");
+          },
+          error: function() {
+            console.log('error loading data');
+          }
         });
-    window.location.replace("govolunteer.html");
   });
 });
