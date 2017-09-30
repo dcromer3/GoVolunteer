@@ -13,7 +13,24 @@ function login(){
                 alert("Invalid password");
             }else if (getData.uservalid == true && getData.passvalid == true) {
                 sessionStorage.setItem("username",username);
-                window.location.replace("addNewEvent.html");
+
+                $.ajax({
+                      url:'https://lce4l1fcek.execute-api.us-east-1.amazonaws.com/beta/userid/'+encodeURIComponent(username),
+                      method: 'GET',
+                      dataType: 'json',
+                      success: function(getData) {
+                        if (getData.Items[0].type = "V") {
+                          window.location.replace("myevents.html");
+                        } else if (getData.Items[0].type = "O") {
+                          window.location.replace("addNewEvent.html");
+                        }
+                      },
+                      error: function() {
+                        console.log('error loading data');
+                      }
+                });
+
+                //window.location.replace("addNewEvent.html");
                 return false;
             }
           },

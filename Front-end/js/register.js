@@ -18,12 +18,14 @@ function ajax2() {
 					  "name": username,
 					  "password": password,
 					  "phone": phone,
-					  "userid": userId
+					  "userid": userId,
+					  "dob":"12-08-94"
 					}
 	return $.ajax({
 	        type: "POST",
 	        data :JSON.stringify(events),
-	        url: "https://lce4l1fcek.execute-api.us-east-1.amazonaws.com/user/userid",
+	        //url: "https://lce4l1fcek.execute-api.us-east-1.amazonaws.com/user/userid",
+	        url:"https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer",
 	        contentType: "application/json"
 	});
 }
