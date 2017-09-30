@@ -91,5 +91,6 @@ function iterURL() {
   }
 }
 function back() {
+  sessionStorage.removeItem("eventId");
   window.location.replace("addNewEvent.html");
 }

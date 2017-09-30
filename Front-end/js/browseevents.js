@@ -29,7 +29,7 @@ function more(hid) {
   //var moreId = document.getElementById(hid);
   var id = document.getElementsByClassName(hid.id);
   id = id[0].innerHTML;
-  sessionStorage.setItem("eventId",id);
+  sessionStorage.setItem("registerId",id);
   window.location.replace("registerEvent.html");
 }
 function ajax2() {
@@ -51,5 +51,6 @@ function ajax2() {
 }
 
 function back() {
+	sessionStorage.removeItem("registerId");
 	window.location.replace("myevents.html");
 }

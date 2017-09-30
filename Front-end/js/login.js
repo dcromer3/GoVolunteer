@@ -20,7 +20,7 @@ function login(){
                       dataType: 'json',
                       success: function(getData) {
                         console.log(getData.Items[0].type.S)
-                        if (getData.Items[0].type.S == "V") {
+                        if (getData.Items[0].type.S == "VOL") {
                           window.location.replace("myevents.html");
                         } else if (getData.Items[0].type.S == "ORG") {
                           window.location.replace("addNewEvent.html");

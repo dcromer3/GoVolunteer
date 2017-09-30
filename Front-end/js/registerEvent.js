@@ -2,7 +2,7 @@ $(window).bind("load", function() {
   //var organizationId = getOrganizationId();
   var username = sessionStorage.getItem("username");
 
-  var id = sessionStorage.getItem("eventId");
+  var id = sessionStorage.getItem("registerId");
   console.log('event id: ',id);
   $.ajax({
           url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
@@ -19,7 +19,7 @@ $(window).bind("load", function() {
           }
   });
   $('#back').on('click', function() {
-    sessionStorage.removeItem("eventId");
+    sessionStorage.removeItem("registerId");
     window.location.replace("browseevents.html");
   });
 
@@ -46,8 +46,6 @@ $(window).bind("load", function() {
                       contentType: "application/json",
                       success: function() {
                         window.location.replace("myevents.html");
-                        //console.log(username);
-                        //console.log(id);
                     },
                     error: function() {
                       console.log('error loading data');
