@@ -4,7 +4,7 @@ $(window).bind("load", function() {
   var id = sessionStorage.getItem("eventId");
   console.log(id);
   $.ajax({
-          url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
+          /*url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
@@ -12,6 +12,18 @@ $(window).bind("load", function() {
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
             //document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
+          },
+          error: function() {
+            console.log('error loading data');
+          }*/
+          url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
+          +encodeURIComponent(id),
+          method: 'GET',
+          dataType: 'json',
+          success: function(getData) {
+            document.getElementById("event-name").innerHTML = getData.Items[0].eventname.S;
+            document.getElementById("desc").innerHTML = getData.Items[0].description.S;
+            document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
           },
           error: function() {
             console.log('error loading data');

@@ -19,9 +19,10 @@ function login(){
                       method: 'GET',
                       dataType: 'json',
                       success: function(getData) {
-                        if (getData.Items[0].type = "V") {
+                        console.log(getData.Items[0].type.S)
+                        if (getData.Items[0].type.S == "V") {
                           window.location.replace("myevents.html");
-                        } else if (getData.Items[0].type = "ORG") {
+                        } else if (getData.Items[0].type.S == "ORG") {
                           window.location.replace("addNewEvent.html");
                         }
                       },
@@ -29,8 +30,6 @@ function login(){
                         console.log('error loading data');
                       }
                 });
-
-                //window.location.replace("addNewEvent.html");
                 return false;
             }
           },

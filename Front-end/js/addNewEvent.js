@@ -9,12 +9,45 @@ function logout() {
 	window.location.replace("login.html");
 }
 function createEvents() {
+	/*
 	var username = sessionStorage.getItem("username");
 	var eventname = document.getElementById("name").value;
 	var skills = document.getElementById("skill").value;
 	var desc = document.getElementById("desc").value;
 	console.log('user: '+ username);
-
+	$.when(ajax1()).done(function() {
+		console.log(eventname);
+		 if (eventname == "") {
+		 	alert("missing event name");
+		} else if (desc == "") {
+			alert("missing event description");
+		} else if (skills == "") {
+			alert("missing preferred skills");
+		} else {
+			var eventId = count.toString();
+			var events = {
+					  "eventId": eventId,
+					  "description": desc,
+					  "date": "10-03-17",
+					  "location": "2445 dooley drive",
+					  "orgs": {username},
+					  "title": eventname,
+					  "users": "0",
+					  "skill": {skills}
+					}
+		    $.ajax({
+		        type: "POST",
+		        data :JSON.stringify(events),
+		        url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event",
+		        contentType: "application/json"
+		    });
+    	}
+    });*/
+	var username = sessionStorage.getItem("username");
+	var eventname = document.getElementById("name").value;
+	var skills = document.getElementById("skill").value;
+	var desc = document.getElementById("desc").value;
+	console.log('user: '+ username);
 	$.when(ajax1()).done(function() {
 		console.log(eventname);
 		 if (eventname == "") {
@@ -31,8 +64,8 @@ function createEvents() {
 							  "description": desc,
 							  "eventname": eventname,
 							  "organization": num,
-							  "skills": skills,
-							  "username": username
+							  "username": username,
+							  "skills": skills
 							}
 		    $.ajax({
 		        type: "POST",
