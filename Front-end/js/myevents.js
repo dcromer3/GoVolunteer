@@ -18,3 +18,8 @@ $( document ).ready(function() {
           }
     });
 });
+
+function logout() {
+	sessionStorage.removeItem("username");
+	window.location.replace("login.html");
+}
