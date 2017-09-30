@@ -21,7 +21,7 @@ function iterURL() {
       console.log('organizationID : ' + organizationId);
       document.getElementById(eventname).innerHTML = eventsArr[i].title.S;
       document.getElementById(desc).innerHTML = eventsArr[i].description.S;
-      document.getElementById(hid).innerHTML = eventsArr[i].eventId;
+      document.getElementById(hid).innerHTML = eventsArr[i].eventId.S;
       temp += 1;
   }
 }
@@ -29,9 +29,8 @@ function more(hid) {
   //var moreId = document.getElementById(hid);
   var id = document.getElementsByClassName(hid.id);
   id = id[0].innerHTML;
-  //console.log(id);
   sessionStorage.setItem("eventId",id);
-  window.location.replace("eventProfile.html");
+  window.location.replace("registerEvent.html");
 }
 function ajax2() {
   return $.ajax({

@@ -1,4 +1,3 @@
-
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
   var id = sessionStorage.getItem("eventId");
@@ -19,10 +18,10 @@ $(window).bind("load", function() {
   });
   $('#back').on('click', function() {
     sessionStorage.removeItem("moreId");
-    window.location.replace("govolunteer.html");
+    window.location.replace("browseevents.html");
   });
 
-  $('#edit').on('click', function() {
+  $('#register').on('click', function() {
     sessionStorage.setItem("editId",id);
     window.location.replace("editEvent.html");
   });
