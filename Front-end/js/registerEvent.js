@@ -1,5 +1,7 @@
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
+  var username = sessionStorage.getItem("username");
+
   var id = sessionStorage.getItem("eventId");
   console.log(id);
   $.ajax({
@@ -17,13 +19,27 @@ $(window).bind("load", function() {
           }
   });
   $('#back').on('click', function() {
-    sessionStorage.removeItem("moreId");
+    sessionStorage.removeItem("eventId");
     window.location.replace("browseevents.html");
   });
 
   $('#register').on('click', function() {
-    sessionStorage.setItem("editId",id);
-    window.location.replace("editEvent.html");
+    var events = {
+                "eventId": id,
+                "user": username
+              }
+    $.ajax({
+            method: "PUT",
+            data :JSON.stringify(events),
+            url: 'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/addvol',
+            contentType: "application/json",
+            success: function() {
+              window.location.replace("myevents.html");
+          },
+          error: function() {
+            console.log('error loading data');
+          }
+        });
   });
   $('#delete').on('click', function() {
     var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
