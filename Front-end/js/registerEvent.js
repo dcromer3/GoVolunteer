@@ -3,7 +3,7 @@ $(window).bind("load", function() {
   var username = sessionStorage.getItem("username");
 
   var id = sessionStorage.getItem("eventId");
-  console.log(id);
+  console.log('event id: ',id);
   $.ajax({
           url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
@@ -34,12 +34,31 @@ $(window).bind("load", function() {
             url: 'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/addvol',
             contentType: "application/json",
             success: function() {
-              window.location.replace("myevents.html");
+              
+              var register = {
+                "userId": username,
+                "eventId": id
+              }
+              $.ajax({
+                      method: "PUT",
+                      data :JSON.stringify(register),
+                      url: 'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer/register',
+                      contentType: "application/json",
+                      success: function() {
+                        window.location.replace("myevents.html");
+                        //console.log(username);
+                        //console.log(id);
+                    },
+                    error: function() {
+                      console.log('error loading data');
+                    }
+              });
           },
           error: function() {
             console.log('error loading data');
           }
-        });
+    });
+
   });
   $('#delete').on('click', function() {
     var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
