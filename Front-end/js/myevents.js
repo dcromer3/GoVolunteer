@@ -14,13 +14,9 @@ $( document ).ready(function() {
           	} else {
           		nameArr.push(getData.Items[0].events.SS);
           		nameArr[0].shift();
-          		console.log(nameArr);
-          		//nameArr.shift();
-          		//console.log(nameArr);
           		$.when(ajax2()).done(function() {
-				  	console.log(eventsArr);
 				    if (eventsArr.length != 0) {
-				      iterURL();
+				    	iterURL();
 				    }
 				 });
           		document.getElementById('events').style.display= 'block' ;
@@ -53,21 +49,23 @@ function more(hid) {
   window.location.replace("registerEvent.html");
 }
 function ajax2() {
-	return $.ajax({
-	    url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event',
-	    method: 'GET',
-	    dataType: 'json',
-	    success: function(getData) {
-	        for (var i = 0; i < getData.Items.length; i++) {
-	          //console.log(getData.Items.length);
-	          //userArr[i] = (getData.Items[i].username.S);
-	            eventsArr.push(getData.Items[i]);
-	        }
-	    },
-	    error: function() {
-	        console.log('error loading data');
-	    }
-	});
+	var register = {
+        "userId": username,
+    }
+    return $.ajax({
+	              method: "POST",
+	              data :JSON.stringify(register),
+	              url: 'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/relatedusers',
+	              contentType: "application/json",
+	              success: function(data) {
+	              	for (var i = 0; i < data.Items.length; i++) {
+	              		eventsArr.push(data.Items[i]);
+	              	}
+	            },
+	            error: function() {
+	              console.log('error loading data');
+	            }
+        	});
 }
 function logout() {
 	sessionStorage.removeItem("username");
