@@ -21,7 +21,7 @@ function login(){
                       success: function(getData) {
                         if (getData.Items[0].type = "V") {
                           window.location.replace("myevents.html");
-                        } else if (getData.Items[0].type = "O") {
+                        } else if (getData.Items[0].type = "ORG") {
                           window.location.replace("addNewEvent.html");
                         }
                       },
