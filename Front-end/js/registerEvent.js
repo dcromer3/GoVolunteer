@@ -77,3 +77,7 @@ $(window).bind("load", function() {
         });
   });
 });
+
+function profile() {
+  window.location.replace("organizationProfile.html");
+}
