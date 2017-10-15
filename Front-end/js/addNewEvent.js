@@ -47,6 +47,8 @@ function createEvents() {
 	var eventname = document.getElementById("name").value;
 	var skills = document.getElementById("skill").value;
 	var desc = document.getElementById("desc").value;
+	var addr = document.getElementById("address").value;
+
 	console.log('user: '+ username);
 	$.when(ajax1()).done(function() {
 		console.log(eventname);
