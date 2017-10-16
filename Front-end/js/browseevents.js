@@ -12,6 +12,7 @@ $( document ).ready(function() {
   });
 });
 function iterURL() {
+  /*
   var temp = 0;
   for (var i = 0; i < eventsArr.length; i++) {
       organizationId = eventsArr[i].eventId;
@@ -23,13 +24,25 @@ function iterURL() {
       document.getElementById(desc).innerHTML = eventsArr[i].description.S;
       document.getElementById(hid).innerHTML = eventsArr[i].eventId.S;
       temp += 1;
+  }*/
+  var temp = 0;
+  var contents ="";
+  for (var i = 0; i < eventsArr.length; i++) {
+    contents += '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">'+'<div class="event-tile">'+
+    '<h5>'+eventsArr[i].title.S+'</h5>'+
+    '<p>'+ eventsArr[i].description.S+'</p>'+
+    '<div class="right">'+'<button onclick=more(\''+eventsArr[i].eventId.S+'\') class="your-event">'+"more..."+'</button>'+'</div>'+
+    '</div>'+'</div>';
+    temp += 1;
   }
+  document.getElementById("contents").innerHTML = contents;
 }
 function more(hid) {
-  //var moreId = document.getElementById(hid);
-  var id = document.getElementsByClassName(hid.id);
-  id = id[0].innerHTML;
-  sessionStorage.setItem("registerId",id);
+
+  //var id = document.getElementsByClassName(hid.id);
+  //id = id[0].innerHTML;
+  console.log(hid);
+  sessionStorage.setItem("registerId",hid);
   window.location.replace("registerEvent.html");
 }
 function ajax2() {
