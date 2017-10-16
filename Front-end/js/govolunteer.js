@@ -23,23 +23,6 @@ function more(hid) {
   window.location.replace("eventProfile.html");
 }
 
-function ajax1() {
-  return $.ajax({
-      url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationsinfo/',
-      method: 'GET',
-      dataType: 'json',
-      success: function(getData) {
-        for (var i = 0; i < getData.Items.length; i++) {
-          arr[i] = (getData.Items[i].organization.S);
-          //console.log(arr);
-        }
-      },
-      error: function() {
-        console.log('error loading data');
-      }
-  });
-}
-
 function ajax2() {
   return $.ajax({
       url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/username/',
