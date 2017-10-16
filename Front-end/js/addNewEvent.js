@@ -48,6 +48,10 @@ function createEvents() {
 	var skills = document.getElementById("skill").value;
 	var desc = document.getElementById("desc").value;
 	var addr = document.getElementById("address").value;
+	var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var zip = document.getElementById("zip").value;
+	var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 	console.log('user: '+ username);
 	$.when(ajax1()).done(function() {
@@ -62,21 +66,30 @@ function createEvents() {
 			var num = count.toString();
 			console.log(num);
 			var events = {
-							  "address": "2445 dooley drive",
 							  "description": desc,
-							  "eventname": eventname,
-							  "organization": num,
-							  "username": username,
-							  "skills": skills
+							  "date": utc,
+							  "address": addr,
+							  "city": city,
+							  "state":state,
+							  "zipcode":zip,
+							  "orgs": username,
+							  "title": eventname,
+							  "skill": skills,
+							  "interest": "empty"
 							}
 		    $.ajax({
 		        type: "POST",
 		        data :JSON.stringify(events),
-		        url: "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization",
-		        contentType: "application/json"
+		        url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event",
+		        contentType: "application/json",
+		        success: function() {
+                    alert('created');
+		    		window.location.replace("govolunteer.html");
+                },
+                error: function() {
+                  console.log('error loading data');
+                }
 		    });
-		    alert('created');
-		    window.location.replace("govolunteer.html");
 		}
   	});
 	
