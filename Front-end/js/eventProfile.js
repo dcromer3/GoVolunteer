@@ -16,21 +16,21 @@ $(window).bind("load", function() {
           error: function() {
             console.log('error loading data');
           }*/
-          url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
+          url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
-            document.getElementById("event-name").innerHTML = getData.Items[0].eventname.S;
+            document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
-            document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
+            document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
           },
           error: function() {
             console.log('error loading data');
           }
   });
   $('#back').on('click', function() {
-    sessionStorage.removeItem("moreId");
+    sessionStorage.removeItem("eventId");
     window.location.replace("govolunteer.html");
   });
 
@@ -39,6 +39,7 @@ $(window).bind("load", function() {
     window.location.replace("editEvent.html");
   });
   $('#delete').on('click', function() {
+    sessionStorage.removeItem("eventId");
     var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
     $.ajax({
             method: "GET",

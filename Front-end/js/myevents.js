@@ -15,8 +15,8 @@ $( document ).ready(function() {
           		nameArr.push(getData.Items[0].events.SS);
           		nameArr[0].shift();
           		$.when(ajax2()).done(function() {
-				    if (eventsArr.length != 0) {
-				    	iterURL();
+    				    if (eventsArr.length != 0) {
+    				    	 iterURL();
 				    }
 				 });
           		document.getElementById('events').style.display= 'block' ;
@@ -29,23 +29,22 @@ $( document ).ready(function() {
 });
 function iterURL() {
   var temp = 0;
+  var contents ="";
   for (var i = 0; i < eventsArr.length; i++) {
-      organizationId = eventsArr[i].eventId;
-      var eventname = "eventname" + temp;
-      var desc = "desc" + temp;
-      var hid = "hid" + temp;
-      console.log('organizationID : ' + organizationId);
-      document.getElementById(eventname).innerHTML = eventsArr[i].title.S;
-      document.getElementById(desc).innerHTML = eventsArr[i].description.S;
-      document.getElementById(hid).innerHTML = eventsArr[i].eventId.S;
-      temp += 1;
+    contents += '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">'+'<div class="your-event-tile">'+
+    '<h5>'+eventsArr[i].title.S+'</h5>'+
+    '<p>'+ eventsArr[i].description.S+'</p>'+
+    '<div class="right">'+'<button onclick=more(\''+eventsArr[i].eventId.S+'\') class="your-event">'+"more..."+'</button>'+'</div>'+
+    '</div>'+'</div>';
+    temp += 1;
   }
+  document.getElementById("contents").innerHTML = contents;
 }
 function more(hid) {
   //var moreId = document.getElementById(hid);
-  var id = document.getElementsByClassName(hid.id);
-  id = id[0].innerHTML;
-  sessionStorage.setItem("registerId",id);
+  //var id = document.getElementsByClassName(hid.id);
+  //id = id[0].innerHTML;
+  sessionStorage.setItem("registerId",hid);
   window.location.replace("registerEvent.html");
 }
 function ajax2() {
