@@ -10,9 +10,12 @@ $(window).bind("load", function() {
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
+            console.log(getData);
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
-            //document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
+            document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
+            document.getElementById("date").innerHTML = getData.Items[0].date.S;
+            document.getElementById("location").innerHTML = getData.Items[0].location.S;
           },
           error: function() {
             console.log('error loading data');
