@@ -1,7 +1,7 @@
 
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
-  var id = sessionStorage.getItem("eventId");
+  var id = sessionStorage.getItem("registerId");
   console.log(id);
   $.ajax({
           /*url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
@@ -24,22 +24,20 @@ $(window).bind("load", function() {
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
             document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
+            document.getElementById("date").innerHTML = getData.Items[0].date.S;
+            document.getElementById("location").innerHTML = getData.Items[0].location.S;
           },
           error: function() {
             console.log('error loading data');
           }
   });
   $('#back').on('click', function() {
-    sessionStorage.removeItem("eventId");
-    window.location.replace("govolunteer.html");
+    sessionStorage.removeItem("registerId");
+    window.location.replace("myevents.html");
   });
 
-  $('#edit').on('click', function() {
-    sessionStorage.setItem("editId",id);
-    window.location.replace("editEvent.html");
-  });
   $('#delete').on('click', function() {
-    sessionStorage.removeItem("eventId");
+    sessionStorage.removeItem("registerId");
     var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
     $.ajax({
             method: "GET",

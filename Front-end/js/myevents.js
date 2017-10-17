@@ -45,7 +45,7 @@ function more(hid) {
   //var id = document.getElementsByClassName(hid.id);
   //id = id[0].innerHTML;
   sessionStorage.setItem("registerId",hid);
-  window.location.replace("registerEvent.html");
+  window.location.replace("eventProfile.html");
 }
 function ajax2() {
 	var register = {
