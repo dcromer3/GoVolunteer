@@ -39,7 +39,7 @@ $(window).bind("load", function() {
     window.location.replace("myevents.html");
   });
 
-  $('#delete').on('click', function() {
+  $('#Unregister').on('click', function() {
     var events = {
                 "eventId": id,
                 "userId": username

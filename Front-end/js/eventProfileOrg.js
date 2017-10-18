@@ -48,37 +48,40 @@ $(window).bind("load", function() {
       deleteUser = usersArr[1];
       alert(deleteUser);
     }
-    var deleteEvent = {
-                        "eventId": id,
-                      }
-    $.ajax({
-            method: "DELETE",
-            data :JSON.stringify(deleteEvent),
-            url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event",
-            contentType: "application/json",
-            success: function() {
-              var deleteUser = {
-                        "eventId": id,
-                        "userId": deleteUser
-                      }
-              $.ajax({ // ----> has problem
-                      method: "DELETE",
-                      data :JSON.stringify(deleteUser),
-                      url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/relatedusers",
-                      contentType: "application/json",
-                      success: function() {
-                        sessionStorage.removeItem("eventId");
-                        alert('Deleted');
-                        window.location.replace("govolunteer.html");
-                    },
-                    error: function() {
-                      console.log('error loading data');
-                    }
-              });
-          },
-          error: function() {
-            console.log('error loading data');
-          }
+      var deleteUser = {
+                "eventId": id,
+                "userId": deleteUser
+              }
+      $.ajax({ // ----> has problem
+              method: "DELETE",
+              data :JSON.stringify(deleteUser),
+              url: 'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer/register',
+              contentType: "application/json",
+              success: function() {
+
+                var deleteEvent = {
+                                    "eventId": id,
+                                  }
+                $.ajax({
+                        method: "DELETE",
+                        data :JSON.stringify(deleteEvent),
+                        url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event",
+                        contentType: "application/json",
+                        success: function() {
+
+
+                          sessionStorage.removeItem("eventId");
+                          alert('Deleted');
+                          window.location.replace("govolunteer.html");
+                        },
+                        error: function() {
+                          console.log('error loading data');
+                        }
+                      });
+              },
+              error: function() {
+                console.log('error loading data');
+              }
     });
   });
 });
