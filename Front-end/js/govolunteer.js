@@ -18,7 +18,7 @@ $( document ).ready(function() {
 function more(hid) {
 
   sessionStorage.setItem("eventId",hid);
-  window.location.replace("eventProfile.html");
+  window.location.replace("eventProfileOrg.html");
 }
 
 function ajax2() {
@@ -28,10 +28,9 @@ function ajax2() {
       dataType: 'json',
       success: function(getData) {
         console.log(getData);
-        /*
         for (var i = 0; i < getData.Items.length; i++) {
             eventsArr.push(getData.Items[i]);
-        }*/
+        }
       },
       error: function() {
         console.log('error loading data');
