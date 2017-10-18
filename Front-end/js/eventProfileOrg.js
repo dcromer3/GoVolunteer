@@ -33,7 +33,11 @@ $(window).bind("load", function() {
   });
   $('#back').on('click', function() {
     sessionStorage.removeItem("eventId");
-    window.location.replace("myevents.html");
+    window.location.replace("govolunteer.html");
+  });
+  $('#edit').on('click', function() {
+    sessionStorage.setItem("editId",id);
+    window.location.replace("editEvent.html");
   });
 
   $('#delete').on('click', function() {

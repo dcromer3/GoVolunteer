@@ -1,15 +1,21 @@
 
 $(window).bind("load", function() { 
   var id = sessionStorage.getItem("editId");
+  var utc;
+  var eventId;
   $.ajax({
-          url:'https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization/'
+          url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
-            document.getElementById("name").innerHTML = getData.Items[0].eventname.S;
+            eventId = getData.Items[0].eventId.S;
+            document.getElementById("name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
-            document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
+            document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
+            document.getElementById("date").innerHTML = getData.Items[0].date.S;
+            utc = getData.Items[0].date.S;
+            document.getElementById("location").innerHTML = getData.Items[0].location.S;
           },
           error: function(xhr, textStatus, errorThrown) {
             console.log(xhr);
@@ -18,13 +24,21 @@ $(window).bind("load", function() {
     });
   $('#back').on('click', function() {
     sessionStorage.removeItem("editId");
-    window.location.replace("eventProfile.html");
+    window.location.replace("eventProfileOrg.html");
   });
   $('#edit').on('click', function() {
+    var location = document.getElementById("location").value;
+    var temp = new Array();
+    temp = location.split(",");
+    console.log(temp);
     var username = sessionStorage.getItem("username");
     var eventname = document.getElementById("name").value;
     var skills = document.getElementById("skill").value;
     var desc = document.getElementById("desc").value;
+    var addr = temp[0];
+    var city = temp[1];
+    var state = temp[2];
+    var zip = temp[3];
     console.log('user: '+ username);
     if (eventname == "") {
       alert("missing event name");
@@ -33,24 +47,33 @@ $(window).bind("load", function() {
     } else if (skills == "") {
       alert("missing preferred skills");
     } else {
-      var num = id.toString();
       var events = {
-                "address": "2445 dooley drive",
-                "description": desc,
-                "eventname": eventname,
-                "organization": num,
-                "skills": skills,
-                "username": username
-              }
-        $.ajax({
-            type: "POST",
-            data :JSON.stringify(events),
-            url: "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organization",
-            contentType: "application/json"
-        });
-        alert('edited');
-        sessionStorage.removeItem("editId");
-        window.location.replace("eventProfile.html");
+                      "eventId": eventId,
+                      "description": desc,
+                      "date": utc,
+                      "address": addr,
+                      "city": city,
+                      "state":state,
+                      "zipcode":zip,
+                      "orgs": username,
+                      "title": eventname,
+                      "skill": skills,
+                      "interest": "empty"
+                    }
+      $.ajax({
+          type: "POST",
+          data :JSON.stringify(events),
+          url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event",
+          contentType: "application/json",
+          success: function() {
+            alert('edited');
+            sessionStorage.removeItem("editId");
+            window.location.replace("eventProfileOrg.html");
+          },
+          error: function() {
+            console.log('error loading data');
+          }
+      });
     }
   });
 });
