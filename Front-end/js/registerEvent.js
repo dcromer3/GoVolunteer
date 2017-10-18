@@ -61,22 +61,6 @@ $(window).bind("load", function() {
     });
 
   });
-  $('#delete').on('click', function() {
-    var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
-    $.ajax({
-            method: "GET",
-            dataType: 'json',
-            url: deleteURL,
-            contentType: "application/json",
-            success: function() {
-            alert('Deleted');
-            window.location.replace("govolunteer.html");
-          },
-          error: function() {
-            console.log('error loading data');
-          }
-        });
-  });
 });
 
 function profile() {

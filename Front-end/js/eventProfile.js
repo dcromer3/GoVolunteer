@@ -3,6 +3,9 @@ $(window).bind("load", function() {
   //var organizationId = getOrganizationId();
   var id = sessionStorage.getItem("registerId");
   console.log(id);
+  var username = sessionStorage.getItem("username");
+  console.log(username);
+
   $.ajax({
           /*url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
@@ -37,20 +40,38 @@ $(window).bind("load", function() {
   });
 
   $('#delete').on('click', function() {
-    sessionStorage.removeItem("registerId");
-    var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
+    var events = {
+                "eventId": id,
+                "userId": username
+              }
     $.ajax({
-            method: "GET",
-            dataType: 'json',
-            url: deleteURL,
+            method: "DELETE",
+            data :JSON.stringify(events),
+            url: 'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/relatedusers',
             contentType: "application/json",
             success: function() {
-            alert('Deleted');
-            window.location.replace("govolunteer.html");
+              var register = {
+                "userId": username,
+                "eventId": id
+              }
+              $.ajax({
+                      method: "DELETE",
+                      data :JSON.stringify(register),
+                      url: 'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer/register',
+                      contentType: "application/json",
+                      success: function() {
+                        sessionStorage.removeItem("registerId");
+                        alert('Deleted');
+                        window.location.replace("myevents.html");
+                    },
+                    error: function() {
+                      console.log('error loading data');
+                    }
+              });
           },
           error: function() {
             console.log('error loading data');
           }
-        });
+    });
   });
 });

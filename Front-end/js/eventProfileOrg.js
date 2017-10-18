@@ -22,7 +22,7 @@ $(window).bind("load", function() {
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
-            usersArr = getData.Items[0].users;
+            usersArr = getData.Items[0].users.SS;
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
             document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
@@ -46,6 +46,7 @@ $(window).bind("load", function() {
     var deleteUser;
     if (usersArr.length > 1) {
       deleteUser = usersArr[1];
+      alert(deleteUser);
     }
     var deleteEvent = {
                         "eventId": id,
@@ -60,7 +61,7 @@ $(window).bind("load", function() {
                         "eventId": id,
                         "userId": deleteUser
                       }
-              $.ajax({
+              $.ajax({ // ----> has problem
                       method: "DELETE",
                       data :JSON.stringify(deleteUser),
                       url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/relatedusers",
