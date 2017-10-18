@@ -2,6 +2,7 @@
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
   var id = sessionStorage.getItem("eventId");
+  var usersArr;
   console.log(id);
   $.ajax({
           /*url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
@@ -21,6 +22,7 @@ $(window).bind("load", function() {
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
+            usersArr = getData.Items[0].users;
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
             document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
@@ -41,20 +43,41 @@ $(window).bind("load", function() {
   });
 
   $('#delete').on('click', function() {
-    sessionStorage.removeItem("eventId");
-    var deleteURL = "https://u27x0no4t5.execute-api.us-east-1.amazonaws.com/organization/organizationdelete/"+encodeURIComponent(id); 
+    var deleteUser;
+    if (usersArr.length > 1) {
+      deleteUser = usersArr[1];
+    }
+    var deleteEvent = {
+                        "eventId": id,
+                      }
     $.ajax({
-            method: "GET",
-            dataType: 'json',
-            url: deleteURL,
+            method: "DELETE",
+            data :JSON.stringify(deleteEvent),
+            url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event",
             contentType: "application/json",
             success: function() {
-            alert('Deleted');
-            window.location.replace("govolunteer.html");
+              var deleteUser = {
+                        "eventId": id,
+                        "userId": deleteUser
+                      }
+              $.ajax({
+                      method: "DELETE",
+                      data :JSON.stringify(deleteUser),
+                      url: "https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/relatedusers",
+                      contentType: "application/json",
+                      success: function() {
+                        sessionStorage.removeItem("eventId");
+                        alert('Deleted');
+                        window.location.replace("govolunteer.html");
+                    },
+                    error: function() {
+                      console.log('error loading data');
+                    }
+              });
           },
           error: function() {
             console.log('error loading data');
           }
-        });
+    });
   });
 });
