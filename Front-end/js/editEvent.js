@@ -16,6 +16,8 @@ $(window).bind("load", function() {
             document.getElementById("date").innerHTML = getData.Items[0].date.S;
             utc = getData.Items[0].date.S;
             document.getElementById("location").innerHTML = getData.Items[0].location.S;
+            document.getElementById("interest").innerHTML = getData.Items[0].interest.SS;
+
           },
           error: function(xhr, textStatus, errorThrown) {
             console.log(xhr);
@@ -35,6 +37,7 @@ $(window).bind("load", function() {
     var eventname = document.getElementById("name").value;
     var skills = document.getElementById("skill").value;
     var desc = document.getElementById("desc").value;
+    var interest = document.getElementById("interest").value;
     var addr = temp[0];
     var city = temp[1];
     var state = temp[2];
@@ -58,7 +61,7 @@ $(window).bind("load", function() {
                       "orgs": username,
                       "title": eventname,
                       "skill": skills,
-                      "interest": "empty"
+                      "interest": interest
                     }
       $.ajax({
           type: "POST",
