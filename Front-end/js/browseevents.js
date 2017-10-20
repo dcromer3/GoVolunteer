@@ -1,16 +1,55 @@
 var eventsArr = [];
-
+var interest = new Map();
+var options;
 
 $( document ).ready(function() {
   username = sessionStorage.getItem("username");
   console.log('username: ' + username);
   $.when(ajax2()).done(function() {
-  	console.log(eventsArr);
     if (eventsArr.length != 0) {
       iterURL();
     }
   });
+  $.when(iterInt()).done(function() {
+    if (interest.size != 0) {
+      makeList(interest); 
+    }
+  })
+  
 });
+
+function makeList(arr) {
+  //console.log(arr.size);
+  var contents ="";
+  for (var [key, value] of arr) {
+    contents += '<option value =\''+value+'\'>'
+  }
+  document.getElementById("browsers").innerHTML = contents;
+}
+
+
+function iterInt() {
+  return $.ajax({
+          url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/ae/int',
+          method: 'GET',
+          dataType: 'json',
+          success: function(getData) {
+            for (var i =0; i < getData.Items.length; i++) {
+              interest.set(getData.Items[i].eventId.S, getData.Items[i].interest.SS);
+            }
+            //console.log(interest);
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            console.log(xhr);
+          }
+  });
+}
+function opt(value) {
+  options = value;
+  console.log(value);
+
+}
+
 function iterURL() {
   /*
   var temp = 0;

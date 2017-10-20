@@ -23,7 +23,7 @@ $(window).bind("load", function() {
             console.log(xhr);
             console.log(errorThrown);
           }
-    });
+  });
   $('#back').on('click', function() {
     sessionStorage.removeItem("editId");
     window.location.replace("eventProfileOrg.html");

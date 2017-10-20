@@ -12,7 +12,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="./js/browseevents.js"></script>
 </head>
-
+<style type="text/css">
+#search {
+	width: 100%; /* Full-width */
+	margin-left: 5px;
+}
+</style>
 <body>
 	<!-- Title row -->
 	<div class="row">
@@ -28,6 +33,27 @@
 		</div>
 	</div>
 
+	<!-- Select options -->
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<select id="opt" onchange="opt(this.value)">
+			  <option disabled selected value> -- select an option -- </option>
+			  <option value="location">Location</option>
+			  <option value="Organization">Organization</option>
+			  <option value="Keyword">Keyword</option>
+			</select>
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+			<form action="https://www.w3schools.com/action_page.php" method="get">
+			  <input id ="search" list="browsers" name="browser">
+			  <datalist id="browsers">
+			  </datalist>
+			</form>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<button onclick="opt()" id="back">Submit</button>
+		</div>
+	</div>
 
 	<!-- Event Tiles -->
 	<div class="row" id="contents">
