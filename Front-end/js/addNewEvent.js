@@ -51,6 +51,7 @@ function createEvents() {
 	var city = document.getElementById("city").value;
 	var state = document.getElementById("state").value;
 	var zip = document.getElementById("zip").value;
+	var Interests = document.getElementById("Interests").value;
 	var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 
 	console.log('user: '+ username);
@@ -75,7 +76,7 @@ function createEvents() {
 							  "orgs": username,
 							  "title": eventname,
 							  "skill": skills,
-							  "interest": "empty"
+							  "interest": Interests
 							}
 		    $.ajax({
 		        type: "POST",
