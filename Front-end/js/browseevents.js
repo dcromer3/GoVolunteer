@@ -80,7 +80,8 @@ function submit() {
   shareEvents = [];
   if (ser == 'int') {
     for (var [key, value] of interest) {
-      if (temp == value) {
+      var str = JSON.stringify(value);
+      if (str.includes(temp)) {
         shareArr.push(key);
       }
     }
