@@ -77,12 +77,19 @@ function submit() {
   var ser = sessionStorage.getItem("search");
   var temp = document.getElementById("search").value;
   shareArr = [];
+  shareEvents = [];
   if (ser == 'int') {
     for (var [key, value] of interest) {
       if (temp == value) {
         shareArr.push(key);
       }
     }
+
+    tempF();
+    $(document).ajaxStop(function(){
+      iterURL(shareEvents);
+    });
+    
   } else if (ser == 'org') {
     for (var [key, value] of org) {
       if (temp == value) {
@@ -94,14 +101,28 @@ function submit() {
       iterURL(shareEvents);
     });
   }
-  console.log(shareArr);
 
+}
+function tempF() {
+  $.each(shareArr, function (index, value) {
+    console.log(value);
+    $.ajax({
+        url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'+encodeURIComponent(value),
+        method: 'GET',
+        dataType: 'json',
+        success: function(getData) {
+          console.log('iter');
+          shareEvents.push(getData.Items[0]);
+          //return(getData.Items[0]);
+        },
+        error: function() {
+          console.log('error loading data');
+        }
+    });
+  });
 }
 
 function iterOrgEvents() {
-  //console.log('iterEvents');
-  //$.each(shareArr, function (index, value) {
-    //console.log(shareArr);
     return $.ajax({
         url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/relatedorgs/'+encodeURIComponent(shareArr[0]),
         method: 'GET',
@@ -115,7 +136,6 @@ function iterOrgEvents() {
           console.log('error loading data');
         }
     });
-  //});
 }
 
 function remove_duplicates_es6(arr) {
