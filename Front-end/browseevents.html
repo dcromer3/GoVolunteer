@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./css/govolstyle.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="./js/browseevents.js"></script>
+	<script src="./js/geoLocation.js"></script>
 </head>
 <style type="text/css">
 #search {
@@ -43,14 +44,22 @@
 			  <option value="Keyword">Keyword</option>
 			</select>
 		</div>
-		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<form action="https://www.w3schools.com/action_page.php" method="get">
-			  <input id ="search" list="browsers" name="browser" placeholder="">
+			  <input id ="search" list="browsers" name="browser" placeholder="" style="display:block;">
 			  <datalist id="browsers">
 			  </datalist>
 			</form>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id ="s" style="display:none;">
+				<select id="state" >
+				</select>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="c" style="display:none;">
+				<select id="city" >
+				</select>
+			</div>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 			<button onclick="submit()" id="submits">Submit</button>
 		</div>
 	</div>
