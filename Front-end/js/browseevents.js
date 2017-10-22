@@ -63,11 +63,14 @@ function iterOrg() {
 function opt(value) {
   if (value == "Keyword") {
     makeList(interest);
+    $("#search").attr("placeholder", "Type what you interested").blur();
     sessionStorage.setItem("search","int"); 
   } else if (value == "Organization") {
     makeList(org);
+    $("#search").attr("placeholder", "Type a organization name").blur();
     sessionStorage.setItem("search","org");
   } else if(value == "Location") {
+    $("#search").attr("placeholder", "Type a Zip code").blur();
     sessionStorage.setItem("search","loc");
   }
   console.log(value);
@@ -101,6 +104,7 @@ function submit() {
     $.when(iterOrgEvents()).done(function() {
       iterURL(shareEvents);
     });
+  } else if (ser == 'loc') {
   }
 
 }
