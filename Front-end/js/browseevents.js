@@ -251,7 +251,7 @@ function iterURL(arr) {
   for (var i = 0; i < arr.length; i++) {
     contents += '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">'+'<div class="event-tile">'+
     '<h5>'+arr[i].title.S+'</h5>'+
-    '<p>'+ arr[i].description.S+'</p>'+
+    '<p class="hidden">'+ arr[i].description.S+'</p>'+
     '<div class="right">'+'<button onclick=more(\''+arr[i].eventId.S+'\') class="your-event">'+"more..."+'</button>'+'</div>'+
     '</div>'+'</div>';
   }
