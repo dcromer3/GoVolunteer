@@ -200,7 +200,7 @@ function tempF() {
         method: 'GET',
         dataType: 'json',
         success: function(getData) {
-          console.log('iter');
+          //console.log('iter');
           shareEvents.push(getData.Items[0]);
           //return(getData.Items[0]);
         },
