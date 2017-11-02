@@ -18,15 +18,8 @@
 	width: 100%; /* Full-width */
 	margin-left: 5px;
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+
+
 p.hidden {
     overflow: hidden;
     width: 100%;
@@ -36,18 +29,23 @@ p.hidden {
 </style>
 <body>
 	<!-- Title row -->
-	<div class="row">
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-			<ul>
-				<li><a href="myevents.html"><img src ="Images/logo.png" href="logo.png" alt="GoVolunteer logo"></a></li>
-			</ul>
+		<div class="topnav" id="myTopnav">
+			<div id="main">
+		  <a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+			</div>
+			<div id="navi">
+		  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
+		  <a onclick="#about"><font color="#28B463">More</font><font color="#5DADE2">Events</font></a>
+		  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
+		  <a onclick="out()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
+		  <a onclick="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
 		</div>
-	</div>
 	
 	<!-- Event Categories -->
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<h1>Find Events</h1>
+			<h1><font color="#28B463">Find</font> <font color="#5DADE2">Events</font></h1>
 		</div>
 	</div>
 

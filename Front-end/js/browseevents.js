@@ -21,6 +21,13 @@ $( document ).ready(function() {
   $("#city").on("change", city);
   $("#state").on("change", state);
 
+  $('#out').on('click', function() {
+    sessionStorage.removeItem("registerId");
+    sessionStorage.removeItem("search");
+    sessionStorage.removeItem("username");
+    window.location.replace("login.html");
+  });
+
 });
 
 
@@ -281,6 +288,14 @@ function ajax2() {
         console.log('error loading data');
       }
   });
+}
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
 }
 
 function back() {
