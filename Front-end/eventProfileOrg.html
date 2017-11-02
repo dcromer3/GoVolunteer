@@ -11,15 +11,24 @@
 	<link rel="stylesheet" href="./css/govolstyle.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/eventProfileOrg.js"></script>
+	<script src="./js/logOut.js"></script>
+	<script src="./js/myFunction.js"></script>
 
 </head>
 
 <body>
 	<!-- Title row -->
-	<div class="row">
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-			<a href="govolunteer.html"><img src ="Images/logo.png" href="logo.png" alt="GoVolunteer logo"></a>
-		</div>
+	<div class="topnav" id="myTopnav">
+			<div id="main">
+		  <a href="govolunteer.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+			</div>
+			<div id="navi">
+		  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
+		  <a href="#" onclick="myEvents()"><font color="#28B463">My</font><font color="#5DADE2">Events</font></a>
+		  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
+		  <a href="#" onclick="logOut()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
+		  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
 	</div>
 	
 	<!-- Event Categories -->

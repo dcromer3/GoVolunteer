@@ -80,3 +80,6 @@ $(window).bind("load", function() {
     }
   });
 });
+function myEvents() {
+  window.location.replace("govolunteer.html");
+}

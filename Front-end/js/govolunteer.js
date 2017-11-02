@@ -55,3 +55,6 @@ function back() {
   sessionStorage.removeItem("eventId");
   window.location.replace("addNewEvent.html");
 }
+function myEvents() {
+  window.location.replace("govolunteer.html");
+}

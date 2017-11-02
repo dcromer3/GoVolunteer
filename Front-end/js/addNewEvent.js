@@ -4,10 +4,7 @@ var count = 0;
 function myEvents() {
 	window.location.replace("govolunteer.html");
 }
-function logout() {
-	sessionStorage.removeItem("username");
-	window.location.replace("login.html");
-}
+
 function createEvents() {
 	/*
 	var username = sessionStorage.getItem("username");
