@@ -12,6 +12,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="./js/myevents.js"></script>
 	<script src="./js/logOut.js"></script>
+	<script src="./js/myFunction.js"></script>
 
 </head>
 <style type="text/css">
@@ -31,7 +32,7 @@ p.hidden {
 			</div>
 		  <div id="navi">
 			  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
-			  <a onclick="#about"><font color="#28B463">More</font><font color="#5DADE2">Events</font></a>
+			  <a href="browseevents.html"><font color="#28B463">More</font><font color="#5DADE2">Events</font></a>
 			  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
 			  <a href="#" onclick="logOut()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
 			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
@@ -109,20 +110,8 @@ p.hidden {
 			</div>
 		</div>
 		-->
-		<div class="row" id = "btns">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-				<a href="browseevents.html">
-				<button class="your-event" id ="moreEvent">More events</button>
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="row" id = "btns">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button onclick="logout()" class="your-event" id ="logout">Log Out</button>
-		</div>
-	</div>
-	
+
+	</div>	
 
 </body>
 
