@@ -12,6 +12,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="./js/browseevents.js"></script>
 	<script src="./js/geoLocation.js"></script>
+	<script src="./js/logOut.js"></script>
 </head>
 <style type="text/css">
 #search {
@@ -26,20 +27,22 @@ p.hidden {
     height: 90px;
 }
 
+
 </style>
 <body>
 	<!-- Title row -->
+
 		<div class="topnav" id="myTopnav">
 			<div id="main">
-		  <a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+		  		<a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
 			</div>
-			<div id="navi">
-		  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
-		  <a onclick="#about"><font color="#28B463">More</font><font color="#5DADE2">Events</font></a>
-		  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
-		  <a onclick="out()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
-		  <a onclick="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-			</div>
+		  <div id="navi">
+			  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
+			  <a onclick="#about"><font color="#28B463">More</font><font color="#5DADE2">Events</font></a>
+			  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
+			  <a href="#" onclick="logOut()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
 		</div>
 	
 	<!-- Event Categories -->

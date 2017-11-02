@@ -20,14 +20,6 @@ $( document ).ready(function() {
   });
   $("#city").on("change", city);
   $("#state").on("change", state);
-
-  $('#out').on('click', function() {
-    sessionStorage.removeItem("registerId");
-    sessionStorage.removeItem("search");
-    sessionStorage.removeItem("username");
-    window.location.replace("login.html");
-  });
-
 });
 
 
