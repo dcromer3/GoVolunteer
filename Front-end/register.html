@@ -34,297 +34,306 @@ function SwapMain(div1,div2) {
 <body>
 	<!-- Title row -->
 
-	<div class="row">
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">	
-		</div>
-		<div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
-			<a href="login.html" class="h-center"><img src ="Images/logo.png" href="logo.png" alt="GoVolunteer logo"></a>
-		</div>
-		<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">	
+	<!-- Title row -->
+	<div class="topnav" id="myTopnav">
+		<div class="container">
+		  	<a href="myevents.html"><font color="#28B463"; size="80px">Go</font><font color="#5DADE2"; size="80px">Volunteer</font></a>
+			<div id="navi">
+			  <!-- <a href="profile" onclick="#news">Profile</a> -->
+			  <!-- <a href="#" onclick="myEvents()">My Events</a> -->
+			  <a href="about" onclick="#about">About</a>
+			  <!-- <a href="#" onclick="logOut()">Logout</a> -->
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
 		</div>
 	</div>
 
+	<div class="container">
 
-<div class="h-center">
-	<!-- radio button for selecting user or organization -->
-	<div class="row">
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-			<input type="radio" name="options" id="option1" autocomplete="off" value="user" onclick="SwapMain('main','second')" checked> User
-			<input type="radio" name="options" id="option2" autocomplete="off" value="organization" onclick="SwapMain('second','main')"> Organization
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-	</div>
-	<!--table for user-->
-	<div class="user" id="main" style="display:block;">
+			<!-- radio button for selecting user or organization -->
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+					<input type="radio" name="options" id="option1" autocomplete="off" value="user" onclick="SwapMain('main','second')" checked> User
+					<input type="radio" name="options" id="option2" autocomplete="off" value="organization" onclick="SwapMain('second','main')"> Organization
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+			</div>
 
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>UserID</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id ="userid">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<!-- Username -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Username</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id ="username">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		
-		<!-- Password -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Password</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="password" id ="password">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
 
-		<!-- Email -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Email Address</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="email">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
+			<!--table for user-->
+			<div class="user" id="main">
 
-		<!-- Phone Number -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Phone Number</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="phone">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>UserID</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input id ="userid" type="text">
+					</div>
+				</div>
 
-		
-		<!-- Buttons -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<button onclick="createId()" class="your-event margin-10">Register</button>
-				<button onclick="back()" id = "back" class="your-event">Back</button>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-	</div>
-	<!--table for organization-->
-	<div class="organization" id="second" style="display:none;">
-		<!-- organization name -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Organization name</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id ="username">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>UserID</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id ="userid">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		
-		<!-- Password -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Password</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="password" id ="password">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
+				<!-- Username -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Username</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id ="username">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				
+				<!-- Password -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Password</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="password" id ="password">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
 
-		<!-- Email -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Email Address</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="email">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<!--<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Address</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="address">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>City</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="city">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>State</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="state">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Zip</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="zip">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>-->
+				<!-- Email -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Email Address</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="email">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
 
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Phone Number</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<input type="text" id="phone">
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<!--
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<h5>Description about Organization</h5>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<textarea rows="4" type="text" id="desc"></textarea>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>-->
-		<!--photo-->
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-				<h1>Add Photo</h1>
-				<div id="drop-zone">
-				    Drop files here...
-				    <div id="clickHere">
-				        <input type="file" name="file" id="file" />
-				    </div>
+
+
+				<!-- Phone Number -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Phone Number</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="phone">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+
+				
+				<!-- Buttons -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<button onclick="back()" id = "back" class="your-event">Back</button>
+						<button onclick="createId()" class="your-event margin-10">Register</button>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-		</div>
-		<!-- Buttons -->
-		<div class="row">
-		    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
-				<button onclick="createId()" class="your-event margin-10">Register</button>
-				<button onclick="back()" id = "back" class="your-event">Back</button>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
-		</div>
-	</div>
-</div>
+			
+
+			<!--table for organization-->
+			<div class="organization" id="second" style="display:none;">
+				<!-- organization name -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Organization name</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id ="username">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>UserID</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id ="userid">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				
+				<!-- Password -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Password</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="password" id ="password">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+
+				<!-- Email -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Email Address</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="email">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<!--<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Address</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="address">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>City</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="city">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>State</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="state">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Zip</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="zip">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>-->
+
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Phone Number</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<input type="text" id="phone">
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<!--
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<h5>Description about Organization</h5>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<textarea rows="4" type="text" id="desc"></textarea>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>-->
+				<!--photo-->
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						<h1>Add Photo</h1>
+						<div id="drop-zone">
+						    Drop files here...
+						    <div id="clickHere">
+						        <input type="file" name="file" id="file" />
+						    </div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+				</div>
+				<!-- Buttons -->
+				<div class="row">
+				    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>	
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+						<button onclick="back()" id = "back" class="your-event">Back</button>
+						<button onclick="createId()" class="your-event margin-10">Register</button>
+						
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	</div>
+				</div>
+		
 				
 <!-- TODO insert fixed position images here -->
 
-
+	</div>
 </body>
 
 </html> 

@@ -26,90 +26,150 @@ p.hidden {
 <body>
 	<!-- Title row -->
 	<div class="topnav" id="myTopnav">
+		<div class="container">
 			<div id="main">
-		  <a href="govolunteer.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+		  		<a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
 			</div>
 			<div id="navi">
-		  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
-		  <a href="#" onclick="myEvents()"><font color="#28B463">My</font><font color="#5DADE2">Events</font></a>
-		  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
-		  <a href="#" onclick="logOut()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
-		  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			  <a href="profile" onclick="#news">Profile</a>
+			  <a href="#" onclick="myEvents()">My Events</a>
+			  <a href="about" onclick="#about">About</a>
+			  <a href="#" onclick="logOut()">Logout</a>
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 			</div>
+		</div>
 	</div>
+
+	<div class="container">
 	
-	<!-- Event Categories -->
-	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Your Events</h1>
+		<!-- Event Categories -->
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h1>Your Events</h1>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h1>Nearby Events</h1>
+			</div>
 		</div>
-	</div>
 
-	<!-- Event Tiles -->
-	<div class="row" id="contents">
-	</div>
-	<!--
-	<div class="row">
-		
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="your-event-tile">
-						<h5 id = "eventname0">Event Name</h5>
-						<img href="event.png" alt="Event Image">
-						<p id = "desc0">Event description</p>
-						<p class = "h0" id = "hid0" hidden></p>
-						<div class="right">
-							<button onclick="more(this)" class="your-event" id ="h0">More...</button>
+		<!-- Event Tiles -->
+		<div class="row" id="contents">
+		</div>
+
+		<div class="row">
+			<!-- Your Events -->
+			<!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname0">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc0">Event description</p>
+							<p class = "h0" id = "hid0" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h0">More...</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname1">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc1">Event description</p>
+							<p class ="h1"id = "hid1" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h1">More...</button>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="your-event-tile">
-						<h5 id = "eventname1">Event Name</h5>
-						<img href="event.png" alt="Event Image">
-						<p id = "desc1">Event description</p>
-						<p class ="h1"id = "hid1" hidden></p>
-						<div class="right">
-							<button onclick="more(this)" class="your-event" id ="h1">More...</button>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname2">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc2">Event description</p>
+							<p class="h2"id = "hid2" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h2">More...</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname3">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc3">Event description</p>
+							<p class="h3"id = "hid3" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h3">More...</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+			<!-- Nearby Events -->
+			<!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname0">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc0">Event description</p>
+							<p class = "h0" id = "hid0" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h0">More...</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname1">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc1">Event description</p>
+							<p class ="h1"id = "hid1" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h1">More...</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname2">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc2">Event description</p>
+							<p class="h2"id = "hid2" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h2">More...</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="your-event-tile">
+							<h5 id = "eventname3">Event Name</h5>
+							<img href="event.png" alt="Event Image">
+							<p id = "desc3">Event description</p>
+							<p class="h3"id = "hid3" hidden></p>
+							<div class="right">
+								<button onclick="more(this)" class="your-event" id ="h3">More...</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="your-event-tile">
-						<h5 id = "eventname2">Event Name</h5>
-						<img href="event.png" alt="Event Image">
-						<p id = "desc2">Event description</p>
-						<p class="h2"id = "hid2" hidden></p>
-						<div class="right">
-							<button onclick="more(this)" class="your-event" id ="h2">More...</button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="your-event-tile">
-						<h5 id = "eventname3">Event Name</h5>
-						<img href="event.png" alt="Event Image">
-						<p id = "desc3">Event description</p>
-						<p class="h3"id = "hid3" hidden></p>
-						<div class="right">
-							<button onclick="more(this)" class="your-event" id ="h3">More...</button>
-						</div>
-					</div>
-				</div>
+		</div> -->
+
+		<!-- See More -->
+		<div class="row" id = "btns">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+				<button onclick="back()" class="your-event" id="back">Back</button>
 			</div>
 		</div>
-	</div>-->
-	<!-- See More -->
-	<div class="row" id = "btns">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button onclick="back()" class="your-event" id="back">Back</button>
-		</div>
+
 	</div>
-
-
 </body>
 
 </html> 

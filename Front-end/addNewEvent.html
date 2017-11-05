@@ -18,69 +18,96 @@
 <body>
 	<!-- Title row -->
 	<div class="topnav" id="myTopnav">
+		<div class="container">
 			<div id="main">
-		  <a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+		  		<a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
 			</div>
 			<div id="navi">
-		  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
-		  <a href="#" onclick="myEvents()"><font color="#28B463">My</font><font color="#5DADE2">Events</font></a>
-		  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
-		  <a href="#" onclick="logOut()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
-		  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			  <a href="profile" onclick="#news">Profile</a>
+			  <a href="#" onclick="myEvents()">My Events</a>
+			  <a href="about" onclick="#about">About</a>
+			  <a href="#" onclick="logOut()">Logout</a>
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 			</div>
+		</div>
 	</div>
+
+	<div class="container">
+
+		<div class="row">
+			<!-- Event Information -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Event Name</h3>
+						<input type="text" class="form-control" id="name">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Event Description</h3>
+						<textarea class="form-control" rows="3" id="desc"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Preferred Skills</h3>
+						<textarea class="form-control" rows="5" id="skill"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Relevant to Interests</h3>
+						<input type="text" class="form-control" id="Interests">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Add Photo</h3>
+						<div id="drop-zone">
+						    Drop files here...
+						    <div id="clickHere">
+						        <input type="file" name="file" id="file" />
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Address Information -->
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Street Address</h3>
+						<input type="text" class="form-control" id="address">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>City</h3>
+						<input type="text" class="form-control" id="city">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>State</h3>
+						<input type="text" class="form-control" id="state">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<h3>Zip Code</h3>
+						<input type="text" class="form-control" id="zip">
+					</div>
+				</div>
+			</div>
+		</div>
 	
-	<!-- Event Categories -->
-	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Event Name</h1>
-			<input type="text" class="form-control" id="name">
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Preferred Skills</h1>
-			<textarea class="form-control" rows="5" id="skill"></textarea>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Event Description</h1>
-			<textarea class="form-control" rows="9" id="desc"></textarea>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Interests</h1>
-			<input type="text" class="form-control" id="Interests">
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Address</h1>
-			<input type="text" class="form-control" id="address">
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>City</h1>
-			<input type="text" class="form-control" id="city">
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>State</h1>
-			<input type="text" class="form-control" id="state">
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Zip Code</h1>
-			<input type="text" class="form-control" id="zip">
-		</div>
-
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<h1>Add Photo</h1>
-			<div id="drop-zone">
-			    Drop files here...
-			    <div id="clickHere">
-			        <input type="file" name="file" id="file" />
-			    </div>
+		<div class="row" id = "btns">
+			<div class="col-lg-10 col-md-10 col-sm-0 col-xs-0"></div>
+			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+				<button onclick="createEvents()" class="your-event container" id="createEvents">Create Event</button>
 			</div>
-		</div>
-	</div>
-	<div class="row" id = "btns">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button onclick="createEvents()" class="your-event" id="createEvents">Create Event</button>
 		</div>
 	</div>
 

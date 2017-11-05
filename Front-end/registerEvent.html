@@ -19,65 +19,67 @@
 <body>
 	<!-- Title row -->
 	<div class="topnav" id="myTopnav">
+		<div class="container">
 			<div id="main">
-		  <a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+		  		<a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
 			</div>
 			<div id="navi">
-		  <a onclick="#news"><font color="#28B463">Pro</font><font color="#5DADE2">file</font></a>
-		  <a href="browseevents.html"><font color="#28B463">More</font><font color="#5DADE2">Events</font></a>
-		  <a onclick="#about"><font color="#28B463">Ab</font><font color="#5DADE2">out</font></a>
-		  <a href="#" onclick="logOut()"><font color="#28B463">Log</font><font color="#5DADE2">Out</font></a>
-		  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			  <a href="profile" onclick="#news">Profile</a>
+			  <a href="#" onclick="myEvents()">My Events</a>
+			  <a href="about" onclick="#about">About</a>
+			  <a href="#" onclick="logOut()">Logout</a>
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 			</div>
+		</div>
 	</div>
+
+	<div class="container">
 	
-	<!-- Event Categories -->
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<a href="#"onclick="profile()"><h1 id ="event-name"></h1></a>
+		<!-- Event Categories -->
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<a href="#"onclick="profile()"><h1 id ="event-name"></h1></a>
+			</div>
+
 		</div>
 
-	</div>
-
-	<div class="row">
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-			<iframe src="" height="300px" width="100%">
-			</iframe>
-		</div>
-		<div class="col">
+		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<h3>Preferred Skills</h3>
-				<div id = "skill">
-				</div>	
+				<iframe src="" height="300px" width="100%">
+				</iframe>
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<h3>Event Description</h3>
-				<div id ="desc">To obtain welcoming individuals from the Greater Green Bay Community
-to volunteer their time and offer a customer service experience at our fundraising events that
-visitors will never forget. 
-				</div>	
-			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<h3>Created</h3>
-				<div id ="date">
+			<div class="col">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>Preferred Skills</h3>
+					<div id = "skill">
+					</div>	
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>Event Description</h3>
+					<div id ="desc">To obtain welcoming individuals from the Greater Green Bay Community
+	to volunteer their time and offer a customer service experience at our fundraising events that
+	visitors will never forget. 
+					</div>	
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>Created</h3>
+					<div id ="date">
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<h3>location</h3>
+					<div id ="location">
+					</div>
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<h3>location</h3>
-				<div id ="location">
-				</div>
+		</div>
+		<div class="row" id = "btns">
+			<div class="col-lg-10 col-md-10 col-sm-6 col-xs-6">
+				<button class="your-event" id="back">Back</button>
 			</div>
-		</div>
-	</div>
-	<div class="row" id = "btns">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button class="your-event" id="register">Register</button>
-		</div>
-
-	</div>
-	<div class="row" id = "btns">
-		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<button class="your-event" id="back">Back</button>
+			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+				<button class="your-event" id="register">Register</button>
+			</div>
 		</div>
 	</div>
 	

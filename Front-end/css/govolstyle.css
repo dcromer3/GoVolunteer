@@ -3,25 +3,44 @@ html {
 }
 
 body {
-	background: #0d2747; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#0d2747, rgb(50, 152, 50)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#0d2747, rgb(50, 152, 50)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#0d2747, rgb(50, 152, 50)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#0d2747, rgb(50, 152, 50)); /* Standard syntax */
-	padding: 3%;
+	background: #dfdfdf;
 	color: #fff;
 	height: 100%;
+}
+
+#login {
+  background: white; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #0e099b, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #0e099b, green); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #0e099b, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(bottom right, #0e099b, green); /* Standard syntax */
+  color: #fff;
+}
+
+.white-text {
+	color: #fff;
+}
+
+.container {
+	padding: 3%;
+	color: #0d2747;
+	background: transparent;
 }
 
 h5 {
 	margin-top: 7%;
 }
 
+h3 {
+	margin-top: 7%;
+}
+
 .your-event-tile {
-	background: rgb(230, 247, 255);
+	background: rgb(255, 255, 255);
 	padding: 3%;
 	color: #0d2747;
 	margin: 3%;
+	box-shadow: 5px 5px 2px grey;
 
 }
 
@@ -30,10 +49,11 @@ h5 {
 }
 
 .event-tile {
-	background: rgb(233, 255, 230);
+	background: rgb(255, 255, 255);
 	padding: 3%;
-	color: #0d4727;
+	color: #0d2747;
 	margin: 3%;
+	box-shadow: 5px 5px 2px grey;
 }
 
 .your-event {
@@ -92,8 +112,9 @@ a:hover {
 
 .topnav {
   overflow: hidden;
-  background-color: transparent;
+  background-color: #0d2747;
       z-index:2;
+  font: #fff;
 
 }
 
@@ -135,11 +156,11 @@ a:hover {
   }
 
 }
-#main {
+/*#main {
 	font-size:80px;
-}
+}*/
 #navi {
-	padding-top: 60px;
+	padding-top: 30px;
 	float: right;
 	font-size:20px;
 }
