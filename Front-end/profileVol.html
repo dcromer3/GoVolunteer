@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GoVolunteer</title>
+	<meta charset="UTF-8">
+	<meta name="GoVolunteer home page" content="GoVolunteer volunteer events">
+	<meta name="author" content="Rania Glass">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/govolstyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/profileVol.js"></script>
+	<script src="./js/logOut.js"></script>
+	<script src="./js/myFunction.js"></script>
+
+</head>
+<style type="text/css">
+p.hidden {
+    overflow: hidden;
+    width: 100%;
+    height: 90px;
+}
+
+</style>
+
+<body>
+	<!-- Title row -->
+	<div class="topnav" id="myTopnav">
+		<div class="container">
+			<div id="main">
+		  		<a href="myevents.html"><font color="#28B463">Go</font><font color="#5DADE2">Volunteer</font></a>
+			</div>
+			<div id="navi">
+			  <a href="profileVol.html" onclick="#news">Profile</a>
+			  <a href="browseevents.html">More Events</a>
+			  <a href="about" onclick="#about">About</a>
+			  <a href="#" onclick="logOut()">Logout</a>
+			  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<!-- Event Categories -->
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<h1>Profile</h1>
+			</div>
+			<div class="user" id="main">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<h5>UserID</h5>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<div id="userId"></div>
+				</div>
+
+			<!-- Username -->
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<h5>Username</h5>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<textarea type="text" id ="username" rows="1"></textarea>
+				</div>
+			
+			<!-- Password -->
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<h5>New Password</h5>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+            		<input type="password" name="pass1" id="pass1">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<h5>Confirm Password</h5>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+            		<input type="password" name="pass2" id="pass2" onkeyup="checkPass(); return false;">
+           			<span id="confirmMessage" class="confirmMessage"></span>
+				</div>
+
+			<!-- Email -->
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<h5>Email Address</h5>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<textarea type="text" id="email" rows="1"> </textarea>
+				</div>
+
+
+
+			<!-- Phone Number -->
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<h5>Phone Number</h5>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">	
+					<textarea type="text" id="phone" rows="1"></textarea>
+				</div>
+
+			<!-- Buttons -->
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+					<button onclick="back()" id = "back" class="your-event">Back</button>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">	
+					<button onclick="edit()" class="your-event margin-10">Edit</button>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">	
+					<button onclick="delete()" class="your-event margin-10">Delete Account</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html> 
