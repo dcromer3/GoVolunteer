@@ -22,6 +22,7 @@ $(window).bind("load", function() {
           }
   });
 
+
   $('#back').on('click', function() {
     sessionStorage.removeItem("registerId");
     window.location.replace("browseevents.html");
@@ -32,35 +33,39 @@ $(window).bind("load", function() {
                 "eventId": id,
                 "user": username
               }
-    $.ajax({
-            method: "PUT",
-            data :JSON.stringify(events),
-            url: 'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/addvol',
-            contentType: "application/json",
-            success: function() {
-              
-              var register = {
-                "userId": username,
-                "eventId": id
-              }
-              $.ajax({
-                      method: "PUT",
-                      data :JSON.stringify(register),
-                      url: 'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer/register',
-                      contentType: "application/json",
-                      success: function() {
-                        window.location.replace("myevents.html");
-                    },
-                    error: function() {
-                      console.log('error loading data');
-                    }
-              });
-          },
-          error: function() {
-            console.log('error loading data');
-          }
-    });
-
+    var x = document.getElementById("required").checked 
+    if (x == true) {
+      $.ajax({
+              method: "PUT",
+              data :JSON.stringify(events),
+              url: 'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/addvol',
+              contentType: "application/json",
+              success: function() {
+                
+                var register = {
+                  "userId": username,
+                  "eventId": id
+                }
+                $.ajax({
+                        method: "PUT",
+                        data :JSON.stringify(register),
+                        url: 'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer/register',
+                        contentType: "application/json",
+                        success: function() {
+                          window.location.replace("myevents.html");
+                      },
+                      error: function() {
+                        console.log('error loading data');
+                      }
+                });
+            },
+            error: function() {
+              console.log('error loading data');
+            }
+      });
+    } else {
+      alert("Required skills needed");
+    }
   });
 });
 
