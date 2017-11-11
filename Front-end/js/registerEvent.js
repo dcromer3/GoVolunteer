@@ -65,7 +65,7 @@ $(window).bind("load", function() {
             }
       });
     } else {
-      alert("Required skills needed");
+      alert("Check required skills");
     }
   });
 });
