@@ -55,4 +55,7 @@ function checkPass() {
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
     }
-}  
+}
+function myEvents() {
+  window.location.replace("govolunteer.html");
+}
