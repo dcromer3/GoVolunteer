@@ -16,6 +16,7 @@ $(window).bind("load", function() {
             document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;
             document.getElementById("date").innerHTML = getData.Items[0].date.S;
             document.getElementById("location").innerHTML = getData.Items[0].location.S;
+            document.getElementById("Interests").innerHTML = getData.Items[0].interest.SS;
           },
           error: function() {
             console.log('error loading data');
