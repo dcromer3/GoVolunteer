@@ -18,7 +18,7 @@ $( document ).ready(function() {
     				    if (eventsArr.length != 0) {
     				    	 iterURL();
 				    }
-				 });
+				  });
           		document.getElementById('events').style.display= 'block' ;
           	}
           },
