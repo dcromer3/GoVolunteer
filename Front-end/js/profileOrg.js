@@ -1,9 +1,6 @@
 function back() {
 	  window.location.replace("addNewEvent.html");
 }
-function edit() {
-
-}
 
 
 $(window).bind("load", function() { 
@@ -25,6 +22,36 @@ $(window).bind("load", function() {
           error: function() {
             console.log('error loading data');
           }
+  });
+
+  $('#edit').on('click', function() {
+    var id = document.getElementById("username").value;
+    var name = document.getElementById("username").value;
+    var pass = document.getElementById("pass2").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+
+    var edit = {
+                      "userid": id,
+                      "name": name,
+                      "email": email,
+                      "password": pass,
+                      "phone": phone
+                    }
+    
+    $.ajax({
+          method: "PUT",
+          data :JSON.stringify(edit),
+          url: 'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer',
+          contentType: "application/json",
+          success: function() {
+            alert('Edited');
+            window.location.replace("profileOrg.html");
+        },
+        error: function() {
+          console.log('error loading data');
+        }
+    });
   });
 });
 
