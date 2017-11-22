@@ -7,7 +7,7 @@ $(window).bind("load", function() {
   console.log(username);
 
   $.ajax({
-          url:'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/organization/ae/'
+          url:'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/volunteer/ae/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
@@ -16,6 +16,9 @@ $(window).bind("load", function() {
             numberOfuser = getData.Items.length;
             if (numberOfuser == 0) {
               document.getElementById("contact").innerHTML = "N/A";
+            } else {
+              temp = '<a href='+"mailto:"+getData.Items[0].email.S+'?Subject=[GoVolunteer] target="_top">'+'Email to Organization'+'</a>';
+              document.getElementById("contact").innerHTML = temp;
             }
           },
           error: function() {

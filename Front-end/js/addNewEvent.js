@@ -53,7 +53,7 @@ function createEvents() {
 
 	console.log('user: '+ username);
 	$.when(ajax1()).done(function() {
-		console.log(eventname);
+		//console.log(eventname);
 		 if (eventname == "") {
 		 	alert("missing event name");
 		} else if (desc == "") {
@@ -61,8 +61,19 @@ function createEvents() {
 		} else if (skills == "") {
 			alert("missing preferred skills");
 		} else {
-			var num = count.toString();
-			console.log(num);
+			//var num = count.toString();
+			//console.log(num);
+			console.log(desc);
+			console.log(utc);
+			console.log(addr);
+			console.log(city);
+			console.log(state);
+			console.log(zip);
+			console.log(username);
+			console.log(eventname);
+			console.log(skills);
+			console.log(Interests);
+
 			var events = {
 							  "description": desc,
 							  "date": utc,

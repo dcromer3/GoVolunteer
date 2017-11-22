@@ -11,7 +11,7 @@ $(window).bind("load", function() {
       for (var i = 0; i < emailArr.length; i++) {
         contents += emailArr[i] +','
       }
-      contents += '?Subject=[GoVolunteer%20notice] target="_top">' + 'Send Email' + "</a>"
+      contents += '?Subject=[GoVolunteer] target="_top">' + 'Email to volunteers' + "</a>"
       document.getElementById("contact").innerHTML = contents;
     }
   });
