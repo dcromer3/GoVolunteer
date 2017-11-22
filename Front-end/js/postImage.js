@@ -4,9 +4,9 @@ function postImage(element){
 
 	String url = 'https://f5orbudj49.execute-api.us-east-1.amazonaws.com/image/event';
 
-	$.ajax(){
+	$.ajax({
           url:'https://f5orbudj49.execute-api.us-east-1.amazonaws.com/image/event'
-          method: 'POST',
+          method: 'PUT',
           dataType: 'json',
         /**  success: function(getData) {
             image;
@@ -15,7 +15,6 @@ function postImage(element){
           error: function() {
             console.log('error loading data');
           **/
-      }
-  };
-	}
+  });
+
 }

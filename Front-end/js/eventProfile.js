@@ -7,23 +7,29 @@ $(window).bind("load", function() {
   console.log(username);
 
   $.ajax({
-          /*url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
+          url:'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/organization/ae/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
-            document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
-            document.getElementById("desc").innerHTML = getData.Items[0].description.S;
-            //document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
+            console.log(getData);
+            numberOfuser = getData.Items.length;
+            if (numberOfuser == 0) {
+              document.getElementById("contact").innerHTML = "N/A";
+            }
           },
           error: function() {
             console.log('error loading data');
-          }*/
+          }
+  });
+
+  $.ajax({
           url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
+            console.log(getData)
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
             document.getElementById("skill").innerHTML = getData.Items[0].skill.SS;

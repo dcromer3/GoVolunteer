@@ -27,7 +27,7 @@ function ajax2() {
       method: 'GET',
       dataType: 'json',
       success: function(getData) {
-        console.log(getData);
+        //console.log(getData);
         for (var i = 0; i < getData.Items.length; i++) {
             eventsArr.push(getData.Items[i]);
         }

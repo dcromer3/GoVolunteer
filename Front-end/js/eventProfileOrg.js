@@ -1,27 +1,28 @@
-
+var emailArr = [];
 $(window).bind("load", function() { 
   //var organizationId = getOrganizationId();
   var id = sessionStorage.getItem("eventId");
   var usersArr;
   console.log(id);
+  var contents ='<a href='+"mailto:";
+  $.when(getEmail(id)).done(function() {
+    console.log(emailArr);
+    if (emailArr.length != 0) {
+      for (var i = 0; i < emailArr.length; i++) {
+        contents += emailArr[i] +','
+      }
+      contents += '?Subject=[GoVolunteer%20notice] target="_top">' + 'Send Email' + "</a>"
+      document.getElementById("contact").innerHTML = contents;
+    }
+  });
+
   $.ajax({
-          /*url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
-          +encodeURIComponent(id),
-          method: 'GET',
-          dataType: 'json',
-          success: function(getData) {
-            document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
-            document.getElementById("desc").innerHTML = getData.Items[0].description.S;
-            //document.getElementById("skill").innerHTML = getData.Items[0].skills.S;
-          },
-          error: function() {
-            console.log('error loading data');
-          }*/
           url:'https://2ps02w2mjj.execute-api.us-east-1.amazonaws.com/beta/event/'
           +encodeURIComponent(id),
           method: 'GET',
           dataType: 'json',
           success: function(getData) {
+            //console.log(getData);
             usersArr = getData.Items[0].users.SS;
             document.getElementById("event-name").innerHTML = getData.Items[0].title.S;
             document.getElementById("desc").innerHTML = getData.Items[0].description.S;
@@ -29,11 +30,13 @@ $(window).bind("load", function() {
             document.getElementById("date").innerHTML = getData.Items[0].date.S;
             document.getElementById("location").innerHTML = getData.Items[0].location.S;
             document.getElementById("Interests").innerHTML = getData.Items[0].interest.SS;
+
           },
           error: function() {
             console.log('error loading data');
           }
   });
+  
   $('#back').on('click', function() {
     sessionStorage.removeItem("eventId");
     window.location.replace("govolunteer.html");
@@ -86,3 +89,26 @@ $(window).bind("load", function() {
     });
   });
 });
+
+function getEmail(id) {
+  return $.ajax({
+          url:'https://wouuuekpxj.execute-api.us-east-1.amazonaws.com/beta/organization/ae/'
+          +encodeURIComponent(id),
+          method: 'GET',
+          dataType: 'json',
+          success: function(getData) {
+            console.log(getData);
+            numberOfuser = getData.Items.length;
+            if (numberOfuser == 0) {
+              document.getElementById("contact").innerHTML = "N/A";
+            } else {
+              for (var i = 0; i < getData.Items.length; i++) {
+                emailArr.push(getData.Items[i].email.S);
+              }
+            }
+          },
+          error: function() {
+            console.log('error loading data');
+          }
+  });
+}
