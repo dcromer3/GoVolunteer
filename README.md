@@ -77,9 +77,11 @@ No Third party Libraries are necessary
 Download Instructions
 -----------------------------------------------------------------------------------------------------------------------------
 Customer
+
 Navigate to https://github.com/dcromer3/GoVolunteer. Scroll to the green button on the right side of the page that says “Clone or Download”; click the button. You will be presented with the option to Open in Desktop or Download ZIP. Select “Download ZIP”. The repository will be downloaded to your computer in a .zip file format. Unzip the folder by right-clicking and opening with the appropriate program, which will depend on your OS. Once the folder has completed the unzipping process, navigate into the “GoVolunteer-master” directory newly created. It should appear next to the .zip file. Perform an FTP transfer of the files in the GoVolunteer-master directory to the server of your choice to host the website.
 
 End User
+
 The end user will have no need to download any software or application to access the project’s services. Once the website has been transferred to the customer’s server, the end user will access the product by navigating to the url at which the server is hosting the product. This url will need to be provided by the customer upon completion of the file transfer.
 
 -----------------------------------------------------------------------------------------------------------------------------
