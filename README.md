@@ -5,52 +5,52 @@ Connecting volunteers to volunteer organizations efficiently and effectively!
 New software features for this release
 -----------------------------------------------------------------------------------------------------------------------------
 
--A user can register to create an account
+	-A user can register to create an account
 
 
--A user can log-in to access features (and log-out)
+	-A user can log-in to access features (and log-out)
 
 
--A user can edit user’s bio
+	-A user can edit user’s bio
 
 
--A user can delete an account upon request
+	-A user can delete an account upon request
 
 
 Organization user can:
 
 
--Post an event with event details (such as name, description, skill, interest and location)
+	-Post an event with event details (such as name, description, skill, interest and location)
 
 
--View events list with details included
+	-View events list with details included
 
 
--Edit related event details
+	-Edit related event details
 
 
--Delete event that is cancelled
+	-Delete event that is cancelled
 
 
--Contact related volunteers of specific event via email
+	-Contact related volunteers of specific event via email
 
 
 Volunteer user can:
 
 
--View all possible events with details posted by organizations
+	-View all possible events with details posted by organizations
 
 
--Filter down events list by location or keyword of the event and host organization
+	-Filter down events list by location or keyword of the event and host organization
 
 
--Register to an event consented that this user is apt volunteer
+	-Register to an event consented that this user is apt volunteer
 
 
--Unregister an event in his/her event list
+	-Unregister an event in his/her event list
 
 
--Contact related organization of specific event via email
+	-Contact related organization of specific event via email
 
 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -58,14 +58,14 @@ Known bugs and defects
 -----------------------------------------------------------------------------------------------------------------------------
 Organization profile page, which is directed from the title link on registerEvent.html, is just hardcoded html page for now because we has not set up for organization’s profile on our database separately from volunteer side. 
 Uploading image file for organization has been in process. So, the image file on events posted by organizations or on organization’s profile is empty for now. 
-	Although those two functions are not our major functions as well as not mentioned in our iteration plan, it might be necessary for user’s convenience in future.  
+
+Although those two functions are not our major functions as well as not mentioned in our iteration plan, it might be necessary for user’s convenience in future.  
 	
 	
 -----------------------------------------------------------------------------------------------------------------------------
 The Install Guide
 -----------------------------------------------------------------------------------------------------------------------------
- Pre-requisites: what is the required configuration of software and hardware that the customer must have before they can begin the installation process?
-A website hosting service, an instance of Dynamo DB from Amazon Web Services, an instance of Amazon Web Services S3 Bucket
+Pre-requisites Required will be a website hosting service, an instance of Dynamo DB from Amazon Web Services, an instance of Amazon Web Services S3 Bucket
 
 -----------------------------------------------------------------------------------------------------------------------------
 Dependent libraries that must be installed: 
